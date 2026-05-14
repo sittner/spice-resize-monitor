@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	install -D -m 0755 spice-resize-monitor.sh $(CURDIR)/debian/spice-resize-monitor/usr/lib/spice-resize-monitor/spice-resize-monitor.sh
+	install -D -m 0644 spice-resize-monitor.service $(CURDIR)/debian/spice-resize-monitor/usr/lib/systemd/system/spice-resize-monitor.service

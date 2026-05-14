@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+    systemctl daemon-reload
+    systemctl enable spice-resize-monitor.service
+    systemctl start spice-resize-monitor.service || true
+fi
+
+#DEBHELPER#
+
+exit 0

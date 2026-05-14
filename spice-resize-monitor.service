@@ -1,0 +1,15 @@
+[Unit]
+Description=SPICE auto-resize monitor for non-GNOME desktops
+Documentation=https://github.com/sittner/spice-resize-monitor
+After=display-manager.service spice-vdagentd.service
+Requires=display-manager.service
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/lib/spice-resize-monitor/spice-resize-monitor.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target
