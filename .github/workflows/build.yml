@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,10 +26,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: spice-resize-monitor-deb
-          path: ../spice-resize-monitor_*.deb
+          path: ${{ github.workspace }}/../spice-resize-monitor_*.deb
 
       - name: Upload to release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: ../spice-resize-monitor_*.deb
+          files: ${{ github.workspace }}/../spice-resize-monitor_*.deb
