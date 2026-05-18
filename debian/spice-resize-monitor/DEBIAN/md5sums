@@ -1,0 +1,4 @@
+cce452118ca63b377b43bd54a94faf7f  usr/lib/spice-resize-monitor/spice-resize-monitor.sh
+0741311f8e53194b637702223ce831c0  usr/lib/systemd/system/spice-resize-monitor.service
+938f4fd4d6685e1f664f49c798ee7010  usr/share/doc/spice-resize-monitor/changelog.Debian.gz
+dd82e26a744b80e0987111ed3e3f87a9  usr/share/doc/spice-resize-monitor/copyright
